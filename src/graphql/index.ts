@@ -9,6 +9,9 @@ dotenv.config();
 const QDRANT_URL = process.env.QDRANT_URL;
 const QDRANT_API_KEY = process.env.QDRANT_API_KEY;
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+console.log("QDRANT_URL:", QDRANT_URL);
+console.log("QDRANT_API_KEY:", QDRANT_API_KEY);
+console.log("GEMINI_API_KEY:", GEMINI_API_KEY);
 
 const qdrant = new QdrantClient({ url: QDRANT_URL, apiKey: QDRANT_API_KEY, checkCompatibility: false });
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY || "");
