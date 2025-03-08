@@ -41,6 +41,7 @@ You can access the deployed project at:
 
 4. Run the Application:
 
+   - Build the application by running: npm build
    - Start the application by running: npm start
    - The GraphQL API server should now be running locally.
 
