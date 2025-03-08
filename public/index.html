@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Query</title>
+  </head>
+  <body style="background-color: rgb(29, 29, 29); color: white; text-align: center">
+    <h1>Enter your query</h1>
+    <form id="queryForm">
+      <input type="text" id="query" placeholder="Enter query..." required />
+      <button type="submit">Submit</button>
+    </form>
+    <h2>Response:</h2>
+    <pre id="resultado" style="white-space: pre-wrap; max-width: 500px; text-align: left; margin: auto"></pre>
+
+    <script>
+      const form = document.getElementById("queryForm");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const query = document.getElementById("query").value;
+        const respostaPre = document.getElementById("resultado");
+        try {
+          const response = await fetch("/agent", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ query }),
+          });
+          const data = await response.json();
+          respostaPre.textContent = JSON.stringify(data, null, 2);
+        } catch (error) {
+          respostaPre.textContent = "Error connecting to the server.";
+        }
+      });
+    </script>
+  </body>
+</html>

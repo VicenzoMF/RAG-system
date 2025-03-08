@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Gera código para a última versão do ECMAScript.
+    "module": "ESNext", // Utiliza módulos nativos do ES; necessário para ESM.
+    "moduleResolution": "node", // Resolução de módulos de forma similar ao Node.
+    "esModuleInterop": true, // Facilita a importação de módulos CommonJS.
+    "skipLibCheck": true, // Pula verificação de tipos de bibliotecas.
+    "strict": true, // Ativa as verificações estritas de tipo.
+    "forceConsistentCasingInFileNames": true, // Garante que os nomes dos arquivos sejam consistentes.
+    "outDir": "./dist" // Diretório onde os arquivos compilados serão colocados.
+  },
+  "include": ["src/**/*"], // Inclui todos arquivos TypeScript da pasta src.
+  "exclude": ["node_modules", "dist"] // Exclui node_modules e dist da compilação.
+}
