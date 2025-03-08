@@ -12,7 +12,7 @@ dotenv.config();
 const QDRANT_API_KEY = process.env.QDRANT_API_KEY;
 const QDRANT_URL = process.env.QDRANT_URL || "http://qdrant:6333";
 const COLLECTION_NAME = "myCollection";
-const qdrant = new QdrantClient({ url: QDRANT_URL, apiKey: QDRANT_API_KEY });
+const qdrant = new QdrantClient({ url: QDRANT_URL, apiKey: QDRANT_API_KEY, checkCompatibility: false });
 
 async function extractContent(url: string): Promise<string> {
   try {

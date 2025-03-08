@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  developtoday:
+    build: .
+    ports:
+      - "4000:4000"
+    environment:
+      - QDRANT_URL=${QDRANT_URL}
+      - QDRANT_API_KEY=${QDRANT_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
