@@ -15,3 +15,40 @@ This project implements a Retrieval Augmented Generation (RAG) system that combi
 
 You can access the deployed project at:
 [https://rag-system-production-2209.up.railway.app](https://rag-system-production-2209.up.railway.app)
+
+## Local Setup Instructions for the RAG System Project
+
+1. Clone the Repository:
+
+   - Download the project code to your local machine.
+
+2. Install Dependencies:
+
+   - Open a terminal in the project root directory.
+   - Run: npm install
+   - If you have problems with Typescript, run "npm install -g typescript"
+
+3. Set Up Environment Variables:
+
+   - Create a .env file in the root directory of the project.
+   - Add the required environment variable keys. For example:
+
+     QDRANT_URL=your_qdrant_url
+     QDRANT_API_KEY=your_qdrant_api_key
+     GEMINI_API_KEY=your_gemini_api_key
+
+   - Replace "your_qdrant_url", "your_qdrant_api_key", and "your_gemini_api_key" with your own credentials.
+
+4. Run the Application:
+
+   - Start the application by running: npm start
+   - The GraphQL API server should now be running locally.
+
+5. Test the API:
+
+   - You can test the GraphQL API using a tool like GraphQL Playground at http://localhost:4000 (default port may vary).
+
+6. Optional - Using Docker:
+   - If Docker is configured, you can build and run the container:
+     a. Build the Docker image: docker build -t rag-system .
+     b. Run the container: docker run --env-file .env -p 4000:4000 rag-system
